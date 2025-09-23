@@ -94,7 +94,7 @@ The goal of this demo is to:
 ### Prerequisites
 
 * Node.js 20+
-* PNPM (recommended) or npm
+* PNPM (recommended) `npm install -g pnpm`
 * Vercel account (for hosting)
 * Discord Developer account (for bot setup)
 * OpenAI API key
