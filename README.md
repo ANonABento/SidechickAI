@@ -110,9 +110,11 @@ DISCORD_BOT_TOKEN=your_discord_bot_token
 DISCORD_APPLICATION_ID=your_discord_app_id
 ```
 
-### Install & Run
+### Install & Run Local
 
 ```bash
+git clone https://github.com/ANonABento/SidechickAI.git
+cd SidchickAI/apps/dashboard/
 pnpm install
 pnpm dev
 ```
