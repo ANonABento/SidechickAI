@@ -1,0 +1,88 @@
+# -------------------------
+# Root .gitignore for ai-productivity
+# -------------------------
+
+# --- Node / Next.js ---
+node_modules/
+.pnp/
+.pnp.js
+.next/
+.next/cache/
+out/
+dist/
+build/
+.eslintcache
+.cache/
+*.tsbuildinfo
+
+# --- Turborepo ---
+.turbo/
+
+# --- Vercel / local deploy state ---
+.vercel/
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Environment files (keep examples) ---
+.env
+.env.*
+!**/.env.example
+
+# Optional: if you want per-app envs ignored explicitly
+apps/**/.env
+apps/**/.env.*
+server/.env
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# --- Editor/IDE ---
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.code-workspace
+
+# --- Testing / coverage ---
+coverage/
+.nyc_output/
+
+# --- Prisma / local SQLite (keep migrations in Git) ---
+prisma/*.db
+prisma/*.db-journal
+prisma/dev.db
+prisma/test.db
+# DO NOT ignore: prisma/migrations/**
+
+# --- Python (Flask server) ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+pip-wheel-metadata/
+*.sqlite
+*.db
+
+# Virtualenvs
+.venv/
+venv/
+ENV/
+env/
+server/.venv/
+
+# --- Misc temp files ---
+*.swp
+*.swo
+*.tmp

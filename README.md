@@ -6,9 +6,9 @@ This project is a **demo productivity assistant** that combines a clean **Next.j
 
 The goal of this demo is to:
 
-* Showcase a working **AI-powered productivity dashboard**
-* Provide a **Discord bot** integration to enable multi-channel interactions
-* Build a foundation that can later be extended to Slack, Gmail, or SMS
+- Showcase a working **AI-powered productivity dashboard**
+- Provide a **Discord bot** integration to enable multi-channel interactions
+- Build a foundation that can later be extended to Slack, Gmail, or SMS
 
 ---
 
@@ -16,28 +16,28 @@ The goal of this demo is to:
 
 ### Core
 
-* **Language**: TypeScript (Node.js 20+)
-* **Framework**: Next.js 15 (App Router)
-* **UI**: React, TailwindCSS, shadcn/ui (for polished UI components)
-* **AI Integration**: OpenAI API via Vercel AI SDK
+- **Language**: TypeScript (Node.js 20+)
+- **Framework**: Next.js 15 (App Router)
+- **UI**: React, TailwindCSS, shadcn/ui (for polished UI components)
+- **AI Integration**: OpenAI API via Vercel AI SDK
 
 ### Discord Bot
 
-* **Platform**: Discord Interactions API (slash commands)
-* **Hosting**: Serverless API route in Next.js (Vercel Edge or Node function)
-* **Features**: `/ask` command to query the AI assistant
+- **Platform**: Discord Interactions API (slash commands)
+- **Hosting**: Serverless API route in Next.js (Vercel Edge or Node function)
+- **Features**: `/ask` command to query the AI assistant
 
 ### Database (optional for demo)
 
-* **ORM**: Prisma
-* **Database**: SQLite (for local dev) → Postgres (Neon/Supabase for production)
-* **Use**: Store user queries and AI responses (can be disabled in early demo)
+- **ORM**: Prisma
+- **Database**: SQLite (for local dev) → Postgres (Neon/Supabase for production)
+- **Use**: Store user queries and AI responses (can be disabled in early demo)
 
 ### Deployment & Infra
 
-* **Hosting**: Vercel (dashboard + bot)
-* **Version Control**: GitHub (monorepo structure)
-* **Package Manager**: PNPM (recommended)
+- **Hosting**: Vercel (dashboard + bot)
+- **Version Control**: GitHub (monorepo structure)
+- **Package Manager**: PNPM (recommended)
 
 ---
 
@@ -77,15 +77,15 @@ The goal of this demo is to:
 
 ## 👤 User Flow
 
-* **On Dashboard**:
+- **On Dashboard**:
 
-  * Open dashboard → Enter prompt → Get AI response instantly.
-  * (Future) Responses saved to history, tasks created automatically.
+  - Open dashboard → Enter prompt → Get AI response instantly.
+  - (Future) Responses saved to history, tasks created automatically.
 
-* **On Discord**:
+- **On Discord**:
 
-  * Run `/ask <prompt>` → Bot replies with AI-generated response.
-  * (Future) Sync responses to dashboard for unified history.
+  - Run `/ask <prompt>` → Bot replies with AI-generated response.
+  - (Future) Sync responses to dashboard for unified history.
 
 ---
 
@@ -93,11 +93,11 @@ The goal of this demo is to:
 
 ### Prerequisites
 
-* Node.js 20+
-* PNPM (recommended) `npm install -g pnpm`
-* Vercel account (for hosting)
-* Discord Developer account (for bot setup)
-* OpenAI API key
+- Node.js 20+
+- PNPM (recommended) `npm install -g pnpm`
+- Vercel account (for hosting)
+- Discord Developer account (for bot setup)
+- OpenAI API key
 
 ### Environment Variables
 
@@ -112,6 +112,8 @@ DISCORD_APPLICATION_ID=your_discord_app_id
 
 ### Install & Run Local
 
+#### Frontend
+
 ```bash
 git clone https://github.com/ANonABento/SidechickAI.git
 cd SidchickAI/apps/dashboard/
@@ -119,23 +121,33 @@ pnpm install
 pnpm dev
 ```
 
-* Dashboard: [http://localhost:3000](http://localhost:3000)
-* Bot: Runs as API route, exposed when deployed to Vercel
+#### Backend
+
+```bash
+cd server
+python -m venv .venv
+source .venv/Scripts/activate
+pip install -r requirements.txt
+python app.py
+```
+
+- Dashboard: [http://localhost:3000](http://localhost:3000)
+- Bot: Runs as API route, exposed when deployed to Vercel
 
 ---
 
 ## 📦 Deployment
 
-* **Dashboard + Bot** → Deploy via Vercel
-* Configure Discord bot’s **Interactions Endpoint URL** in the [Discord Developer Portal](https://discord.com/developers/applications)
-* Point it to your deployed API endpoint (e.g., `https://your-app.vercel.app/api/discord`)
+- **Dashboard + Bot** → Deploy via Vercel
+- Configure Discord bot’s **Interactions Endpoint URL** in the [Discord Developer Portal](https://discord.com/developers/applications)
+- Point it to your deployed API endpoint (e.g., `https://your-app.vercel.app/api/discord`)
 
 ---
 
 ## 🔮 Future Roadmap
 
-* Add authentication (NextAuth.js)
-* Add Prisma logging of queries/responses
-* Add task scheduling and reminders
-* Integrate with Slack, Gmail, Twilio SMS
-* Add analytics dashboard (query volume, response quality)
+- Add authentication (NextAuth.js)
+- Add Prisma logging of queries/responses
+- Add task scheduling and reminders
+- Integrate with Slack, Gmail, Twilio SMS
+- Add analytics dashboard (query volume, response quality)

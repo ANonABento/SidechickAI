@@ -1,5 +1,6 @@
 "use client";
 
+import { askAI } from "../../lib/ai-api";
 import { useState } from "react";
 import GridLayout from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
@@ -62,19 +63,19 @@ export default function Dashboard() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Handle AI calls
+  // Function to call AI API
   const handleAsk = async () => {
-    if (!prompt) return;
-    setLoading(true);
-    const res = await fetch("/api/ai", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt }),
-    });
-    const data = await res.json();
-    setResponse(data.response);
-    setLoading(false);
-  };
+      if (!prompt) return;
+      try {
+        setLoading(true);
+        const data = await askAI(prompt);
+        setResponse(data.response);
+      } catch (e: any) {
+        setResponse(`Error: ${e.message ?? "AI call failed"}`);
+      } finally {
+        setLoading(false);
+      }
+    };
 
   const handleSpeech = () => {
     if (!response) return;
